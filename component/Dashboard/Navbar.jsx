@@ -11,7 +11,7 @@ import { SiNetflix } from 'react-icons/si';
 const NavbarComponent = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f9fafb' }} 
-            className="shadow-2xl fixed l-0 r-0 w-screen"
+            className="shadow-2xl l-0 r-0 w-screen"
         >
             <p style={{ color: 'indigo', textDecoration: "underline", margin: '10px' }}>
                 <a href="/">EthTxn</a>
@@ -32,22 +32,6 @@ const NavbarComponent = () => {
                     style={{ textTransform: 'none', marginTop: 10, marginBottom: 10, border: 'none' }}
                 >
                     Balances
-                </Button>
-                <Button onClick={() => router.push("/dashboard?type=tokens")}
-                    variant="outlined"
-                    color="success"
-                    startIcon={<RiCoinsLine size={18} />}
-                    style={{ textTransform: 'none', marginTop: 10, marginBottom: 10, border: 'none' }}
-                >
-                    Tokens
-                </Button>
-                <Button onClick={() => router.push("/dashboard?type=nfts")}
-                    variant="outlined"
-                    color="success"
-                    startIcon={<SiNetflix size={18} />}
-                    style={{ textTransform: 'none', marginTop: 10, marginBottom: 10, border: 'none' }}
-                >
-                    NFT's
                 </Button>
                 <Button onClick={() => router.push("/dashboard?type=network")}
                     variant="outlined"

@@ -5,7 +5,6 @@ import { Table, TableBody, TableHead, TableRow, TableCell } from '@material-ui/c
 import { getERC20Balances } from '../../utils/hooks/getERC20Balances';
 import { getTokenTransfers } from '../../utils/hooks/getTokenTranfers';
 import { Button } from '@material-ui/core';
-import { getNfts } from '../../utils/hooks/getNft';
 
 const TransactionsPage = () => {
     const [transactions, setTransactions] = useState({
@@ -27,12 +26,17 @@ const TransactionsPage = () => {
         <div>
            <h2> Transactions </h2>
             {transactions.loading ?<p>Fetching transactions...</p>:
-            transactions.data ? <Table sx={{ minWidth: 300 }} aria-label="simple table">
+            transactions.data ? 
+            <Table 
+                sx={{ minWidth: 300, width: 500 }} 
+                width={"500"}
+                aria-label="simple table"
+            >
                 <TableHead>
                 <TableRow>
                     <TableCell>To Address</TableCell>
                     <TableCell align="left">From Address</TableCell>
-                    <TableCell align="left">Hash</TableCell>
+                    <TableCell align="left">Block Number</TableCell>
                     <TableCell align="left">Value</TableCell>
                 </TableRow>
                 </TableHead>
@@ -52,7 +56,7 @@ const TransactionsPage = () => {
                     </TableCell>
                     <TableCell align="left">
                         <p className="text-xs ellipsis">
-                            {row.block_hash}
+                            {row.block_number}
                         </p>
                     </TableCell>
                     <TableCell align="left">

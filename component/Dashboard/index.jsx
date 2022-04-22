@@ -15,6 +15,8 @@ const Dashboard = () => {
     return (
         <div>
             <NavbarComponent />
+            <br />
+            <br />
             <Body />
         </div>
     );
