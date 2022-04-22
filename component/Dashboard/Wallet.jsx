@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getNativeBalances } from '../../utils/hooks/getNativeBalances';
 import { Button } from '@material-ui/core';
+import { fetchTokenMetadata } from '../../utils/hooks/getTokenMetadata';
 
 const WalletPage = () => {
 
@@ -15,14 +16,22 @@ const WalletPage = () => {
         }).catch(error => console.log(error));
     };
 
+    const tokensMetadata = fetchTokenMetadata();
+
+    const fetchTokens = async() => {
+        const data = await tokensMetadata;
+        console.log(data)
+    }
+
     useEffect(() => {
         fetchBalances();
+        fetchTokens();
     }, []);
 
 
     return (
         <div>
-            Wallet
+            <h2>Token balances</h2>
             <table style={{ border: '1px solid #eeeeee', borderRadius: 9 }}>
                 <tbody>
                     <tr className="tableRow">
