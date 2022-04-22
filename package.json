@@ -1,0 +1,33 @@
+{
+  "name": "newproj",
+  "description": "React Query Introduction",
+  "main": "pages/index.js",
+  "author": "shreyvijayvargiya",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@tailwindcss/postcss7-compat": "^2.1.0",
+    "@walletconnect/web3-provider": "^1.7.1",
+    "autoprefixer": "^10.4.2",
+    "axios": "^0.26.0",
+    "cartoon-avatar": "^1.0.2",
+    "moralis": "^0.0.184",
+    "next": "^10.0.8",
+    "postcss": "^7",
+    "postcss-cli": "^8.3.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.4.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.3.1",
+    "react-moralis": "^0.3.11",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
+  },
+  "scripts": {
+    "dev": "NODE_OPTIONS=\"--max_old_space_size=4096\" next",
+    "start": "next start",
+    "build": "next build"
+  }
+}
