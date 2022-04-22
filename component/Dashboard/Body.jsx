@@ -11,7 +11,7 @@ const Body = () => {
     const styles = useStyles();
     return (
         <div className={styles.root}>
-            <Card variant="outlined" style={{ padding: 10, minWidth: '50%', minHeight: '50vh' }}>
+            <Card variant="outlined" style={{ padding: 10, minWidth: '70%', minHeight: '40vh' }}>
                 {router.query.type === "network" && <NetworksPage />}
                 {router.query.type === "balances" && <WalletPage />}
                 {router.query.type === undefined || router.query.type === "transfers" && <TransactionsPage />}
@@ -24,7 +24,6 @@ export default Body;
 
 const useStyles = makeStyles(theme => ({
     root: {
-        // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
