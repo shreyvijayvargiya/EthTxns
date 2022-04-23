@@ -25,14 +25,6 @@ const NavbarComponent = () => {
                 >
                     Transactions
                 </Button>
-                <Button onClick={() => router.push("/dashboard?type=balances")}
-                    variant="outlined"
-                    color="success"
-                    startIcon={<MdAccountBalance size={18} />}
-                    style={{ textTransform: 'none', marginTop: 10, marginBottom: 10, border: 'none' }}
-                >
-                    Balances
-                </Button>
                 <Button onClick={() => router.push("/dashboard?type=network")}
                     variant="outlined"
                     color="primary"
