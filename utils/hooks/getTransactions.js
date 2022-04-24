@@ -7,7 +7,6 @@ export const getTransactions = (accountAddress, block_number, latestBlocNumber )
     const { account: walletAddress } = useMoralis();
     const [transaction, setTransaction] = useState(null);
 
-    console.log(accountAddress, 'address')
     const fetchTransactions = async() => {
         const data = await account.getTransactions({
             chain: chain?.chainId,

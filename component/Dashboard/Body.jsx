@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import NetworksPage from './Network';
 import TransactionsPage from './TransfersPage';
+import SwapPage from './Swap';
 import WalletPage from './Wallet';
 import { useRouter } from 'next/router';
 import { Card, makeStyles } from '@material-ui/core';
+
 
 const Body = () => {
     const router = useRouter();
@@ -15,6 +17,7 @@ const Body = () => {
                 {router.query.type === "network" && <NetworksPage />}
                 {router.query.type === "balances" && <WalletPage />}
                 {router.query.type === undefined || router.query.type === "transfers" && <TransactionsPage />}
+                {router.query.type === 'DeX' && <SwapPage />}
             </Card>
         </div>
     );
