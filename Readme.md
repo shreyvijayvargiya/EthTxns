@@ -19,3 +19,5 @@ yarn run dev
 ### Working process
 > Once user logged in using metamask he will redirect to the dashboard on the transfers page where he can view all the transactions of a specific address. In addition, user can search the transactions from specific block number and can filter the same using date. Default address is also added so if user clicked the fetch transfer button than using that default address the transactions are fetched.
 
+### Message
+> On the dashboard page you will see the 2/3 pages in the navbar naming Transfers, Network and DeX. Transfers is the page that will view all the users transactions of the particular address. This page is of our use to view, sort and filter user balances, transactions and so on. Remaining pages such as Network and DeX are just for development purposes so you can avoid or ignore them.

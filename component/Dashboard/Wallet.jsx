@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { getNativeBalances } from '../../utils/hooks/getNativeBalances';
+import { getNativeBalances } from '../../utils/api/getNativeBalances';
 import { Button } from '@material-ui/core';
-import { fetchTokenMetadata } from '../../utils/hooks/getTokenMetadata';
+import { fetchTokenMetadata } from '../../utils/api/getTokenMetadata';
 
 const WalletPage = () => {
 

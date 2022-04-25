@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getTransactions } from "../../utils/hooks/getTransactions";
+import { getTransactions } from "../../utils/api/getTransactions";
 import {
   Table,
   TableBody,
@@ -17,39 +17,40 @@ const TransactionsPage = () => {
         data: [],
     });
     const [date, setDate] = useState(new Date());
-    const { native } = useMoralisWeb3Api();
+    const { native, account } = useMoralisWeb3Api();
     const { chain } = useChain();
-
     const [search, setSearch] = useState({
-        walletAddress: "0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f",
+        walletAddress: "",
         block_number: "",
     });
 
-    const transaction = getTransactions(search.walletAddress, search.block_number);
-    
-    const fetchTransactons = async () => {
-        setTransactions({ loading: true, data:[] });
-        setTimeout(async() => {
-            const data = await transaction;
-            setTransactions({ loading: false, data: data?.result });
-        }, 2000);
+    const fetchTransactions = async () => {
+      const transaction = getTransactions(
+        search.walletAddress,
+        search.block_number,
+        account,
+        chain
+      );
+      setTransactions({ loading: true, data: [] });
+      setTimeout(async () => {
+        const data = await transaction;
+        setTransactions({ loading: false, data: data?.result });
+      }, 2000);
     };
 
     const handleInputChange = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setSearch(prevState => ({ 
-            ...prevState,  [name]: value
-        }));
+      const name = e.target.name;
+      const value = e.target.value;
+      setSearch(prevState => ({ ...prevState, [name]: value }));
     };
 
     const dateChange = async(e) => {
-        const value = e.target.value;
-        setTransactions({ loading: true, data: [] });
-        setDate(value);
-        const newDate = new Date(value).toISOString();
-        const data = await native.getDateToBlock({ chain: chain?.chainId, date: newDate });
-        setTransactions({ loading: false, data: data?.result });
+      const value = e.target.value;
+      setTransactions({ loading: true, data: [] });
+      setDate(value);
+      const newDate = new Date(value).toISOString();
+      const data = await native.getDateToBlock({ chain: chain?.chainId, date: newDate });
+      setTransactions({ loading: false, data: data?.result });
     };
 
 
@@ -64,8 +65,9 @@ const TransactionsPage = () => {
           placeholder="Enter wallet address"
           variant="outlined"
           color="primary"
-          defaultValue={search.walletAddress}
+          defaultValue="0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f"
           onChange={handleInputChange}
+          value={search.walletAddress}
           helperText="Default address: 0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f"
         />
         <TextField
@@ -75,6 +77,7 @@ const TransactionsPage = () => {
           placeholder="Enter block number"
           variant="outlined"
           color="primary"
+          value={search.block_number}
           onChange={handleInputChange}
           helperText="Search transaction from the entered block number"
         />
@@ -89,18 +92,18 @@ const TransactionsPage = () => {
           helperText="Get balance at the particular date"
         />
         <div>
-            <Button
+          <Button
             variant="outlined"
             color="secondary"
             style={{ textTransform: "none" }}
-            onClick={fetchTransactons}
+            onClick={fetchTransactions}
             size="sm"
             disabled={transactions?.data?.loading}
-            >
+          >
             Fetch Transfers
-            </Button>
-            <br />
-            <br />
+          </Button>
+          <br />
+          <br />
         </div>
       </div>
       <br />

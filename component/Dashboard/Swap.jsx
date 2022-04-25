@@ -1,9 +1,9 @@
 import React, { useState, useEffect }  from 'react';
 import { TextField, Button, Modal } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { getTokens } from '../../utils/hooks/getTokens';
-import { getQuote } from '../../utils/hooks/getQuote';
-import { getSwapAllowance } from '../../utils/hooks/getAllowance';
+import { getTokens } from '../../utils/api/getTokens';
+import { getQuote } from '../../utils/api/getQuote';
+import { getSwapAllowance } from '../../utils/api/getAllowance';
 import { useMoralis } from 'react-moralis';
 
 const SwapPage = () => {

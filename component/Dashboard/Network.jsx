@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useMoralis, useChain } from 'react-moralis';
-import { getNetworkName } from '../../utils/hooks/getNetworkName';
-import { switchNetwork } from '../../utils/hooks/switchNetwork';
+import { getNetworkName } from '../../utils/api/getNetworkName';
+import { switchNetwork } from '../../utils/api/switchNetwork';
 import { Select, MenuItem, Snackbar, Card, Divider } from '@material-ui/core';
 import { BsRecordCircle } from 'react-icons/bs';
 
