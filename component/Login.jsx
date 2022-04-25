@@ -42,8 +42,8 @@ const Login = () => {
 	return (
 		<div className={styles.root}>
             <div>
-                <h2 style={{ fontWeight: 'bold', fontSize: 40 }}>DeXTxN</h2>
-                <p> All streams at once place</p>
+                <h2 style={{ fontWeight: 'bold', fontSize: 40 }}>EthTxn</h2>
+                <p> All web3.0 at once place</p>
                 <p style={{ fontSize: 14 }}>Cross Compatible accross blockhain networks</p>
                 <br />
                 <Button onClick={login} size="small" color="primary" variant="contained" disabled={disabled}
