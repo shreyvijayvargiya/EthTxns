@@ -1,4 +1,4 @@
-### Tracelabs project 
+### OriginTrail project 
 > This project is the mini/basic version of Etherscan.io website. Once the user logged in the dashboard display all the Eth tansactions user have made using the block number via his/her wallet. In addition, user can filter the transactions using date and block number. The list of transactions contains the block number, hash number, amount of ETH, wallet addresses including both sender and receipent. 
 
 ### Deployed Link
